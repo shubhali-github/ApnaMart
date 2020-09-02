@@ -1,0 +1,39 @@
+<h1 align="center">Reactive form</h1>
+<form [formGroup]="formObject">
+  <div class="input-field col s12">
+    <label>Name</label>
+    <input type="text" formControlName="userName" />
+    <div style="color: red;" *ngIf="getuname.touched && getuname.invalid">
+      Error...
+      <div *ngIf="getuname.errors.required">Reuired...</div>
+      <div *ngIf="getuname.errors.noSpace">
+        username did not have any space...
+      </div>
+      <div *ngIf="getuname.errors.valLength">
+        username max length should be 10...
+      </div>
+      <div *ngIf="getuname.errors.minlength">
+        Min {{ getuname.errors.minlength.requiredLength }} Length
+      </div>
+    </div>
+  </div>
+  <div class="input-field col s12">
+    <label>Password</label>
+    <input type="password" formControlName="pass" />
+    <div
+      style="color: red;"
+      *ngIf="formObject.get('pass').touched && formObject.get('pass').invalid"
+    >
+      Error...
+    </div>
+  </div>
+  <div class="input-field col s12">
+    <label>lname</label>
+    <input type="password" [formControl]="name" />
+  </div>
+</form>
+<label>
+  Name:
+  <input type="text" [formControl]="name" />
+</label>
+<h4>{{ name.value }}</h4>

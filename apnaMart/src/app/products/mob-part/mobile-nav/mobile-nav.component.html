@@ -1,0 +1,23 @@
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- step 5: routerLink="mobile" -->
+      <!-- <li><a href="mobile">Mobile href</a></li> -->
+      <li><a routerLink="/mobile">Mobile Parts</a></li>
+      <li><a routerLink="moto">Moto</a></li>
+      <li><a routerLink="sam">Samsung</a></li>
+
+      <!-- step 6: prod.compo.html -->
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+      ><i class="material-icons">menu</i></a
+    >
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<div *ngIf="cartItems.length === 0" class="btn btn-info">
+  Your Cart is empty
+</div>
+<div class="card-group" *ngFor="let item of cartItems">
+  <table>
+    <tr>
+      <td>Name: {{ item.productName }}</td>
+      <td> Price: {{ item.price }}</td>
+      <td>Total:{{cartTotal}}</td>
+      <td><button class="btn btn-danger" (click)="removeitem(item.id)">Remove</button></td>
+    </tr>
+  </table>
+</div>

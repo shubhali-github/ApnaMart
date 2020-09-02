@@ -1,0 +1,75 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><a routerLink="temp">Template</a></li>
+  <li><a routerLink="react">Reactive</a></li>
+</ul>
+<ul id="dropd"class="dropdown-content">
+      <li><a routerLink="mobile">Mobile Parts</a></li>
+            <li><a routerLink="books">Books</a></li>
+      <li><a routerLink="pen">Pens</a></li>
+</ul>
+<ul id="lapycontente" class="dropdown-content">
+  <li><a routerLink="lapi">Laptops</a></li>
+  <li>
+    <!--    we are make variable     outlets var    reference for routes-->
+    <!--added auxillary roues|         |           |-->
+    <a [routerLink]="[{ outlets: { outlet1: ['lapiDetails'] } }]"
+      >Lapy Details</a>
+  </li>
+  <li>
+    <a [routerLink]="[{ outlets: { outlet2: ['lapiOffers'] } }]">Lapy Offers</a>
+  </li>
+  <li><a routerLink="/lazy/lazy-child">Lazy</a></li>
+</ul>
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- step 5: routerLink="mobile" -->
+      <!-- <li><a href="mobile">Mobile href</a></li> -->
+      <li><a routerLink="home">Home</a></li>
+      <!-- <li><a routerLink="product-view/1234">Product-view</a></li> -->
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown1"
+          >Forms<i class="material-icons right">arrow_drop_down</i></a
+        >
+      </li>
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="lapycontente"
+          >Laptops<i class="material-icons right">arrow_drop_down</i></a
+        >
+      </li>
+      <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropd">Produts<i
+            class="material-icons right">arrow_drop_down</i></a>
+      </li>
+      <li><a routerLink="admin">Admin</a></li>
+      <li *ngIf="isLogin()"><a routerLink="dashboard">Dashboard</a></li>
+      <li *ngIf="!isLogin()"><a routerLink="login">Login</a></li>
+      <li *ngIf="isLogin()">
+        <a routerLink="home" (click)="logout()">LogOut</a>
+      </li>
+      <li><a routerLink="cart-item"><svg width="30px" height="50px" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="black"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+      </svg><span  class="badge badge-light">
+        0
+      </span></a></li>
+    </ul>
+    <ul id="nav-mobile" class="sidenav">
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="mobile">Mobile Parts</a></li>
+      <li><a routerLink="books">Books</a></li>
+      <li><a routerLink="lapi">Laptops</a></li>
+      <li><a routerLink="pen">Pens</a></li>
+      <li><a routerLink="dashboard">Dashboard</a></li>
+      <li><a routerLink="temp">Template</a></li>
+      <li><a routerLink="react">Reactive</a></li>
+      <li><a routerLink="login">Login</a></li>
+      
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+      ><i class="material-icons">menu</i></a
+    >
+  </div>
+</nav>

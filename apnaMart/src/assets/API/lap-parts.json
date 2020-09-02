@@ -1,0 +1,43 @@
+{
+  "lapyData": [
+    {
+      "id": 1001,
+      "name": "screen 5.5",
+      "description": "5.5 Screen for AZUR",
+      "inStock": 120,
+      "prodColor": "red",
+      "canPurch": true,
+      "clsVar": true,
+      "country": "Australia",
+      "price": 12000,
+      "prodImg": "lap3.jpg",
+      "quantity": 0
+    },
+    {
+      "id": 1002,
+      "name": "SCREEN 5",
+      "description": "5 Screen for Hp",
+      "inStock": 7,
+      "prodColor": "pink",
+      "canPurch": false,
+      "clsVar": true,
+      "country": "India",
+      "price": 1200,
+      "prodImg": "lap2.jpg",
+      "quantity": 0
+    },
+    {
+      "id": 1003,
+      "name": "Key Panel",
+      "description": "Apple",
+      "inStock": 0,
+      "prodColor": "blue",
+      "canPurch": true,
+      "clsVar": true,
+      "country": "Germany",
+      "price": 32000,
+      "prodImg": "lap1.jpg",
+      "quantity": 0
+    }
+  ]
+}

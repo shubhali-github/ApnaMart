@@ -1,0 +1,21 @@
+<p>http-posts works!</p>
+<form>
+    <div class="input-field">
+        <label>New Post</label>
+        <input type="text" #newTitle (keyup.enter)="createPost(newTitle)" />
+    </div>
+</form>
+<table>
+    <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <!-- <td>{{ post.body }}</td>
+        <td>{{ post.userId }}</td> -->
+        <td>
+            <a class="waves-effect waves-light btn" (click)="updatePost(post)">Update</a>
+        </td>
+        <td>
+            <a class="waves-effect waves-light btn" (click)="deletePost(post)">Delete</a>
+        </td>
+    </tr>
+</table>

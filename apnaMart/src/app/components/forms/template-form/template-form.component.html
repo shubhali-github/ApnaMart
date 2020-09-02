@@ -1,0 +1,97 @@
+<h1 align="center">Template driven form</h1>
+<!--here for and id in input field should be same-->
+<form #ftempVar="ngForm" (ngSubmit)="showForm(ftempVar)">
+  <div>
+    <div class="input-field">
+      <label> User Name </label>
+      <input
+        type="text"
+        ngModel
+        name="uName"
+        #tempVar="ngModel"
+        (keyup)="log(tempVar)"
+        required
+        minlength="7"
+        pattern="Angular"
+      />
+    </div>
+    <div style="color: red;" *ngIf="tempVar.touched && !tempVar.valid">
+      <div *ngIf="tempVar.errors.required">This field cannot be empty</div>
+      <div *ngIf="tempVar.errors.minlength">
+        Min lenght is {{ tempVar.errors.minlength.requiredLength | json }}
+      </div>
+      <div *ngIf="tempVar.errors.pattern">Match Pattern</div>
+    </div>
+    <h1>{{ tempVar.value }}</h1>
+  </div>
+  <div class="input-field">
+    <label> User Lastname </label>
+    <input
+      type="text"
+      ngModel
+      name="uLName"
+      #tempVar2="ngModel"
+      (keyup)="log(tempVar2)"
+      required
+      minlength="7"
+    />
+  </div>
+  <div style="color: red;" *ngIf="tempVar2.touched && !tempVar2.valid">
+    <div *ngIf="tempVar2.errors.required">This field cannot be empty</div>
+    <div *ngIf="tempVar2.errors.minlength">
+      Min lenght is {{ tempVar2.errors.minlength.requiredLength | json }}
+    </div>
+    <div *ngIf="tempVar2.errors.pattern">Match Pattern</div>
+  </div>
+  <!-- select -->
+<p class="input-field col s12">
+  <select name="city0" ngModel>
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Pune 1</option>
+    <option value="2">Pune 2</option>
+    <option value="3">Pune 3</option>
+  </select>
+  <label>Materialize Select</label>
+</p>
+
+<p class="input-field col s12">
+  <select name="city1" ngModel>
+    <option value="" disabled selected>Choose your City</option>
+    <option *ngFor="let city of cities" [value]="city.code">{{
+        city.name
+      }}</option>
+  </select>
+  <label>Materialize Select</label>
+</p>
+  <!-- <h1>{{ tempVar2.value }}</h1> -->
+  <p>
+    <label>
+      <input name="group1" type="radio" checked />
+      <span>Male</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" type="radio" />
+      <span>Female</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input type="checkbox" ngModel name="agree" checked="checked" />
+      <span>T & C</span>
+    </label>
+  </p>
+  <p>
+    <input class="waves-effect waves-light btn" type="submit" />
+  </p>
+  {{ ftempVar.value | json }}
+</form>
+
+<!-- 
+    type="text"  : input data type
+      ngModel    : formObject for error data
+    name="uName" : Uniquee id for 'ngModel'
+      #tempVar="ngModel" : template variable to hold data of input
+      (keyup)="log(tempVar)" : to handle error validation
+ -->
